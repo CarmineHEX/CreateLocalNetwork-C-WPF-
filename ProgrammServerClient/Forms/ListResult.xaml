@@ -1,0 +1,14 @@
+﻿<Window x:Class="ProgrammServerClient.Forms.ListResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgrammServerClient.Forms"
+        mc:Ignorable="d"
+        Title="ListResult" Height="450" Width="330.334" Background="Black">
+    <Grid>
+        <ListBox x:Name="ListResultText" HorizontalAlignment="Left" Height="282" Margin="42,33,0,0" VerticalAlignment="Top" Width="237" FontSize="22" Foreground="#FF811818" FontWeight="Bold"/>
+        <TextBox x:Name="TimeText" HorizontalAlignment="Left" Height="33" Margin="183,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="96" TextChanged="TextBox_TextChanged" Foreground="#FF811818" FontSize="22" FontWeight="Bold" TextAlignment="Center"/>
+
+    </Grid>
+</Window>

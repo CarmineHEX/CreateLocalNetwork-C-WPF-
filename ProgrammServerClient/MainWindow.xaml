@@ -1,0 +1,65 @@
+﻿<Window x:Class="ProgrammServerClient.MainWindow " ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgrammServerClient"
+        mc:Ignorable="d"
+        Title="Data Transmission" Height="452.8" Width="375" Background="Black">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="162*"/>
+            <ColumnDefinition Width="88*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="411" Margin="0,3,0,0" VerticalAlignment="Top" Width="358" Grid.ColumnSpan="4" SelectionChanged="TabControl_SelectionChanged" Background="#FF303030">
+            <TabItem Header="Server" BorderBrush="White">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFA60000" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Margin="10,13,12,101" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Canvas Height="69" Margin="-1,287,-1,-77" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="White" HorizontalAlignment="Left" Width="332">
+                        <Button Content="Запустить" Canvas.Left="234" Canvas.Top="35" Width="75" Click="Button_Click_1" Foreground="White" BorderBrush="Black" Background="#FF811818"/>
+                        <Button Content="..." Canvas.Left="283" Canvas.Top="9" Width="26" Click="Button_Click_2" Foreground="White" Background="#FF811818" BorderBrush="Black"/>
+                        <TextBox x:Name="TextWayFile" Height="19" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="9" Width="268" Foreground="#FF811818" Background="White" BorderBrush="Black" SelectionBrush="#FF811818"/>
+                        <Button x:Name="ButtonShare" Content="Передать файл" Canvas.Left="12" Canvas.Top="36" Width="99" Click="ButtonShare_Click" Foreground="White" Background="#FF811818" BorderBrush="Black"/>
+                    </Canvas>
+                    <Canvas HorizontalAlignment="Left" Height="258" Margin="10,10,0,0" VerticalAlignment="Top" Width="315" Grid.ColumnSpan="2">
+                        <Button x:Name="Acceptbutton" Content="X" Height="21" Width="25" Canvas.Left="147" Canvas.Top="310" Click="AcceptButtonClick" Foreground="White" Background="#FF811818" BorderBrush="Black"/>
+                        <Button x:Name="ButtonCreateServer" Content="Создать сервер" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="92" Click="ButtonCreateServerClick" Canvas.Left="213" Canvas.Top="216" Foreground="White" Background="#FF811818" BorderBrush="Black"/>
+                        <TextBox x:Name="TextPortServer" Height="24" Canvas.Left="76" TextWrapping="Wrap" Text="" Canvas.Top="72" Width="120" TextChanged="TextPortServer_TextChanged" Foreground="#FF811818" SelectionBrush="#FF811818" Background="White" BorderBrush="Black"/>
+                        <Label Content="Port" Canvas.Left="10" Canvas.Top="69" RenderTransformOrigin="0.07,-0.543" Foreground="#FF811818" FontWeight="Bold"/>
+                        <Label Content="IP Server" Height="33" Canvas.Left="10" Canvas.Top="34" Width="61" Foreground="#FF811818" FontWeight="Bold"/>
+                        <TextBox x:Name="TextIPAddressServer" Height="23" Canvas.Left="76" TextWrapping="Wrap" Text="" Canvas.Top="37" Width="120" TextChanged="TextIPAddressServer_TextChanged" Foreground="#FF811818" SelectionBrush="#FF811818" Background="White" BorderBrush="Black"/>
+                        <Button Content="Показать локальный IP компьютера" Canvas.Left="10" Canvas.Top="118" Width="186" Height="28" FontSize="11" Click="ShowIPCurrentComputerButton_Click" Foreground="White" Background="#FF811818" BorderBrush="Black"/>
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Client" Margin="0,-1,-11,1" HorizontalAlignment="Left" Width="53">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFA60000" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Canvas HorizontalAlignment="Left" Margin="10,13,0,17" Width="332" Background="White">
+                    <Label Content="                    Путь для сохранения файла&#xA;                Пример: &quot;C:\Users\dotnet\file.exe&quot;" Height="46" Width="263" Canvas.Left="12" Canvas.Top="181" Foreground="#FF811818"/>
+                    <Button x:Name="ButtonConnectServer" Content="Подключиться к серверу" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="149" Click="ButtonConnectServerClick" Canvas.Left="173" Canvas.Top="311" Foreground="White" Background="#FF811818" BorderBrush="Black"/>
+                    <TextBox x:Name="TextPortClient" Height="23" Canvas.Left="79" TextWrapping="Wrap" Text="" Canvas.Top="74" Width="120" TextChanged="TextPortClient_TextChanged" Foreground="#FF811818" SelectionBrush="#FF811818"/>
+                    <TextBox x:Name="TextIPClient" Height="23" TextWrapping="Wrap" Text="" Width="120" Canvas.Left="79" Canvas.Top="43" TextChanged="TextIPClient_TextChanged" SelectionBrush="#FF811818" Foreground="#FF811818"/>
+                    <Label Content="Port" Canvas.Left="12" Canvas.Top="71" RenderTransformOrigin="0.07,-0.543" Foreground="#FF811818" FontWeight="Bold"/>
+                    <Label Content="IP Server                            " Canvas.Top="41" Canvas.Left="12" Width="62" Foreground="#FF811818" FontWeight="Bold"/>
+                    <TextBox x:Name="TextLinkClient" TextWrapping="Wrap" Text="" Height="26" Width="312" Canvas.Left="10" Canvas.Top="150" SelectionBrush="#FF811818" Foreground="#FF811818" BorderBrush="Black"/>
+                </Canvas>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
